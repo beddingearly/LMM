@@ -30,3 +30,5 @@ if __name__ == '__main__':
     a.next.next.next = ListNode(1)
     b = Solution()
     print b.deleteDuplicates(a)
+    # import copy
+    # result = copy.copy(i)
