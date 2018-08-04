@@ -11,6 +11,10 @@ class Solution(object):
         :type l2: ListNode
         :rtype: ListNode
         """
+        if l1 is None:
+            return l2
+        if l2 is None:
+            return l1
         l = []
         while(l1):
             l.append(l1.val)
@@ -20,14 +24,11 @@ class Solution(object):
             l2 = l2.next
         l.sort()
         aa = ListNode(l[0])
-        point = aa.next
+        point = aa
         for i in l[1:]:
-            point = ListNode(i)
+            node = ListNode(i)
+            point.next = node
             point = point.next
-        while(aa):
-            print aa.val
-            aa = aa.next
-
         return aa
 if __name__ == '__main__':
     a = Solution()
