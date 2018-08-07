@@ -5,7 +5,7 @@ class ListNode(object):
         self.next = None
 
 class Solution(object):
-    def mergeTwoLists(self, l1, l2):
+    def mergeTwoLists_backup(self, l1, l2):
         """
         :type l1: ListNode
         :type l2: ListNode
@@ -30,13 +30,49 @@ class Solution(object):
             point.next = node
             point = point.next
         return aa
+
+    def mergeTwoLists(self, l1, l2):
+        """
+        :type l1: ListNode
+        :type l2: ListNode
+        :rtype: ListNode
+        """
+        if l1 is None:
+            return l2
+        elif l2 is None:
+            return l1
+        p1 = l1
+        p2 = l2
+        head = ListNode(-1)
+        p = head
+        while p1 and p2:
+            if p1.val <= p2.val:
+                pp = ListNode(p1.val)
+                p.next = pp
+                p1 = p1.next
+            elif p1.val > p2.val:
+                pp = ListNode(p2.val)
+                p.next = pp
+                p2 = p2.next
+            p = p.next
+        if p1 is None:
+            p.next = p2
+        elif p2 is None:
+            p.next = p1
+        head = head.next
+        while(head):
+            print head.val
+            head = head.next
+        return head
+
+
 if __name__ == '__main__':
     a = Solution()
-    b1 = ListNode(1)
-    b1.next = ListNode(2)
-    b1.next.next = ListNode(3)
+    b1 = ListNode(2)
+    #b1.next = ListNode(2)
+    #b1.next.next = ListNode(3)
 
     b2 = ListNode(1)
-    b2.next = ListNode(3)
-    b2.next.next = ListNode(4)
-    print a.mergeTwoLists(b1, b2)
+    #b2.next = ListNode(3)
+    #b2.next.next = ListNode(4)
+    a.mergeTwoLists(b1, b2)
