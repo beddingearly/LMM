@@ -14,7 +14,7 @@ class Solution(object):
                 break
         if x < 0:
             tmp = str(x)[1:]
-            result = int('-' + tmp[::-1])
+            result = int('-' + tmp[::-1])#
         else:
             result = int(str(x)[::-1])
         if result < -2**31 or result > 2**31-1:
