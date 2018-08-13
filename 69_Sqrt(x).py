@@ -15,3 +15,9 @@ class Solution(object):
             else:
                 high = mid-1
         return (high+low)/2
+
+
+if __name__ == '__main__':
+    a = Solution()
+    x = 9
+    print a.mySqrt(x)
