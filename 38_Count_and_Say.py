@@ -12,4 +12,4 @@ class Solution(object):
             return '11'
         elif n == 3:
             return '21'
-        for i in range()
+        # for i in range()
