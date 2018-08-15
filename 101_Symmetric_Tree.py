@@ -1,3 +1,4 @@
+# coding=utf-8
 # Definition for a binary tree node.
 from collections import deque
 
@@ -12,6 +13,7 @@ class TreeNode(object):
 class Solution(object):
     def isSymmetric1(self, root):
         """
+        递归调用
         :type root: TreeNode
         :rtype: bool
         """
@@ -35,6 +37,7 @@ class Solution(object):
 
     def isSymmetric(self, root):
         '''
+        双端队列
         :param root:
         :return:
         '''
@@ -59,10 +62,10 @@ class Solution(object):
                     return False
                 else:
                     if leftnode.val == rightnode.val:
-                        d.appendleft(l.left)
-                        d.append(r.right)
-                        d.appendleft(l.right)
-                        d.append(r.left)
+                        d.appendleft(leftnode.left)
+                        d.append(rightnode.right)
+                        d.appendleft(leftnode.right)
+                        d.append(rightnode.left)
                     else:
                         return False
             return True
