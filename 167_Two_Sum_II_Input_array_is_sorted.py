@@ -10,4 +10,4 @@ class Solution(object):
         for i in range(len(numbers)):
             if numbers[i] in d.keys():
                 return [d[numbers[i]] + 1, i + 1]
-            d[target - numbers[i]] = ibe
+            d[target - numbers[i]] = i
