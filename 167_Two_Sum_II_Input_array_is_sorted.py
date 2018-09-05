@@ -6,7 +6,6 @@ class Solution(object):
         :rtype: List[int]
         """
         d = {}
-        l = []
         for i in range(len(numbers)):
             if numbers[i] in d.keys():
                 return [d[numbers[i]] + 1, i + 1]
