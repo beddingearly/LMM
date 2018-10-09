@@ -66,7 +66,6 @@ class Solution(object):
             print x.val
             x = x.next
 
-
 if __name__ == '__main__':
     a = ListNode(1)
     a.next = ListNode(8)
