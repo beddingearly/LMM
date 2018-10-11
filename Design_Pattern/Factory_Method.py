@@ -2,6 +2,7 @@
 '''
 一天学一种设计模式
 https://blog.csdn.net/zheng_lan_fang/article/details/76550093
+https://www.cnblogs.com/onepiece-andy/p/python_factory_method_pattern.html
 
 工厂模式
 定义一个用于创建对象的接口，让子类决定实例化哪一个类。
@@ -41,12 +42,14 @@ class IFactory(object):
         return graduateFactory()
     def buiildUngraduateFactory(self):
         return ungraducateFactory()
+    def create(self):#method
+        pass
 
-class graduateFactory(IFactory):
+class graduateFactory(object):
     def do(self):
         return graducte()
 
-class ungraducateFactory(IFactory):
+class ungraducateFactory(object):
     def do(self):
         return ungraducte()
 
@@ -54,4 +57,5 @@ class ungraducateFactory(IFactory):
 if __name__ == '__main__':
     a = IFactory()
     graduate = a.buildGraduateFactory().do()
+    #graduateFactory i = new graduateFactory();
 
