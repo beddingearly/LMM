@@ -38,10 +38,10 @@ class ungraducte(Leifeng):
     pass
 
 class IFactory(object):
-    def buildGraduateFactory(self):
-        return graduateFactory()
-    def buiildUngraduateFactory(self):
-        return ungraducateFactory()
+    # def buildGraduateFactory(self):
+    #     return graduateFactory()
+    # def buiildUngraduateFactory(self):
+    #     return ungraducateFactory()
     def create(self):#method
         pass
 
