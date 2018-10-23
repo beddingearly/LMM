@@ -38,9 +38,29 @@ class KMP(object):
                 return i - len(self.pattern) + 1
         return -1
 
+    def kmpRyf(self):
+        i = 0
+        while i < len(self.str):
+            #print self.str[i:]
+            for j in range(len(self.pattern)):
+                if self.pattern[j] == self.str[i]:
+                    #print j
+                    if j == 1:
+                        print self.str[i:]
+                    if j == len(self.pattern)-1:  # 最后一个都匹配相同
+                        return i-len(self.pattern)+1
+                    i += 1
+                else:  # 匹配不同
+                    i = i + self.next[j] + 1
+                    break
+        return -1
+
+
 if __name__ == '__main__':
     k = KMP('ababaaababaa', 'aab')
     print k.str
     print k.pattern
-    print k.kmp()
-    print k.next
+    k.cal_next()
+    #print k.kmp()
+    print k.kmpRyf()
+    #print k.next
