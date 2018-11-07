@@ -82,6 +82,20 @@ class Graph(object):
                 return val
         return self._mat[vi][vj]
 
+    def out_edges(self, vi):
+        if self._invalid(vi):
+            return False
+        return self._out_edge(self._mat[vi], self._unconn)
+
+    @staticmethod
+    def _out_edge(row, unconn):
+        edges  = []
+        for i in range(len(row)):
+            if row[i] !=unconn:
+                if row[i] != unconn:
+                    edges.append((i, row[i]))
+        return edges
+
     def __call__(self, *args, **kwargs):
         print 'Graph'
 

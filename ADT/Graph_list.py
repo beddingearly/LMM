@@ -7,8 +7,8 @@
 @Software: PyCharm
 '''
 
-
-class Graph(object):
+from  Graph_maxtrix import Graph
+class GraphAL(object):
     '''
     图的邻接表表示
 
@@ -16,13 +16,15 @@ class Graph(object):
     [1, 2, 3, 4]
 
     (后结点，权值)
-    [(2, 1), (3, 6)]
+    [[0, (2, 1)], [1, (3, 6), (4, 1)]]
     '''
 
     def __init__(self, mat, unconn=0):
+        #super(GraphAL, self).__init__(mat, unconn)
         vnum = len(mat)
 
-        self._mat = [mat[i][1] for i in range(vnum)]
+        self._mat = [Graph._out_edge(mat[i], unconn)
+                     for i in range(vnum)]
         self._unconn = unconn
 
         # 顶点数目
@@ -97,15 +99,20 @@ class Graph(object):
                 return val
         return self._unconn
 
-    def out_edge(self, vi, vj):
-        if self._invalid(vi) or self._invalid(vj):
+    def out_edges(self, vi):
+        '''
+
+        :param vi:
+        :param vj:
+        :return: (vj, val)
+        '''
+        if self._invalid(vi):
             return
         return self._mat[vi]
 
     def __call__(self, *args, **kwargs):
         print 'Graph'
 
-
-g = Graph([[1, 3], [2, 3]])
-print g.__dict__
+# g = GraphAL([[1, 3], [2, 3]])
+# print g.__dict__
 # print g.__class__
