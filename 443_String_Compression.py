@@ -78,15 +78,6 @@ class Solution(object):
                         pos += 1
                     count = 1
 
-                if i == len(chars)-1:  # 最后一个
-                    chars[pos] = chars[i]
-                    pos += 1
-                    if count == 1:
-                        continue
-                    for j in str(count):
-                        chars[pos] = j
-                        pos += 1
-
                 chars[pos] = base
             elif chars[i] == base:
                 count += 1
