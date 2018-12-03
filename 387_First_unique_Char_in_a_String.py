@@ -13,13 +13,14 @@ class Solution(object):
         # return -1
         for i in s:
             if i in s[s.index(i)+1:]:
+                print s.index(i)
                 continue
             else:
                 return s.index(i)
 
         return -1
 if __name__ == '__main__':
-    s = "leetcode"
+    s = "cca"
     #s = 'loveleetcode'
     a = Solution()
     print a.firstUniqChar(s)
